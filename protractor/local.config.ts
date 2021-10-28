@@ -4,6 +4,13 @@ export const config: Config = {
   framework: 'jasmine',
   specs: [ '../test/google.spec.js' ],
   seleniumAddress: 'http://localhost:4444/wd/hub',
+  capabilities: {
+    browserName: 'chrome',
+    count: 1,
+    chromeOptions: {
+      args: ['--headless']
+    }
+  },
   onPrepare: () => {
     browser.ignoreSynchronization = true;
   }
